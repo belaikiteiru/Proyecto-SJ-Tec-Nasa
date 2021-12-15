@@ -1,0 +1,20 @@
+let api_key="GHIv7F0q1IoJFNNmjR5kEYbHmksRE7tg9h0uxl9G"
+var req = new XMLHttpRequest();
+//var url = "https://api.nasa.gov/planetary/apod?api_key=";
+var url="https://images-api.nasa.gov/search?q=uranus&media_type=image"
+
+
+//req.open("GET", url + api_key);
+req.open("GET", url);
+req.send();
+
+req.addEventListener("load", function(){
+	//if(req.status == 200 && req.readyState == 4){
+  	var response = JSON.parse(req.responseText);
+    console.log(response);
+    document.getElementById("title").textContent = response.collection.items[0].data[0].title;
+    //document.getElementById("date").textContent = response.date;
+    document.getElementById("pic").src = response.collection.items[0].links[0].href;
+    document.getElementById("explanation").textContent = response.collection.items[0].data[0].description;
+  
+})
