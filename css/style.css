@@ -1,0 +1,375 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+.planetas{
+
+	padding:100px;
+	width:200px;
+	height: 200px;	
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content:space-around ;
+    align-content:center;
+    
+
+}
+
+.planetas h4{
+    position:absolute;
+    z-index:100;
+    text-align:center;    
+    transition:0.5s;
+    color:rgba(250,255,255,0);
+
+    
+}
+.planetas:hover h3{
+    position:absolute;
+    color:#071278;
+    size:20px;
+    
+   
+}
+.planetas:hover img{
+      /*filter:brightness(0.8);  */
+      transform:scale(1.1);
+}
+.container{
+
+	padding-top: 8%;
+	display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;    
+	justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+
+body section img{
+	border-radius: 50%;
+	width: 92%;	
+    height:92%;
+    position: absolute;
+    transition:0.5s;
+    
+}
+
+body {
+    
+	background-image: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569_960_720.jpg) ;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+    background-size: cover;
+	width: 100%;
+	height: 100%;
+	font-family: 'Merriweather', serif;
+
+}
+
+header {
+	width: 100%;
+	height: 100px;
+	padding: 0 100px;
+	background-color: #154360;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+    z-index:1;
+    
+}
+header h2{
+     color: white; 
+}
+header nav {
+	display: block;
+}
+
+header nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    
+}
+
+header nav ul li {
+	margin: 0 5px;
+	list-style-type: none;
+}
+
+header nav ul li a {
+	text-decoration: none;
+	color:white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	text-transform: uppercase;
+	transition: 0.2s;
+}
+.text-submenu
+{
+    color:black;
+    
+}
+header nav ul li a:hover {
+	background-color: orange; 
+}
+
+.iconos {
+	display: none;
+}
+
+.iconos i {
+	font-size: 50px;
+}
+
+.disable {
+	display: none !important;
+}
+#lorem{
+   padding:10%;
+}
+@media (max-width: 991px) {
+	header nav {
+		display: none;
+	}
+	.iconos {
+		display: block;
+	}
+}
+
+.submenu-a {
+	position: relative;
+}
+
+.submenu {
+	display: none;
+	background-color: #eee;
+	min-width: 200px !important;
+}
+
+.submenu li {
+	padding: 20px 0;
+}
+
+.submenu-a:hover .submenu {
+	display: block !important;
+	position: absolute;
+	top: 30px;
+	padding: 20px 10px;
+}
+
+footer {
+	width: 100%;
+	background-color: #154360;
+	bottom: 0;
+    position:fixed;
+	text-align: center;
+    color:white;
+   
+    
+}
+footer section div p{
+    color:white;
+}
+footer section div{
+    flex-direction:row;
+    display:inline-block;
+	color: white;
+	text-align: center;
+	font-size: large;
+    
+}
+
+.contacts{
+    display:inline-block;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(0, 0, 0, .5);
+  transition: all ease 1s;
+
+}
+
+.closeoverlay {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  display: block;
+  z-index: 2;
+  position: fixed;
+  cursor: pointer;
+}
+
+.closebutton {
+  color: red;
+  text-decoration: none;
+  font-size: 30px;
+  margin: 0 auto;
+  display: table;
+}
+
+.modal:target {
+  opacity: 1;
+  pointer-events: auto;
+  
+}
+
+.modal:target>.closeoverlay {
+  display: block;
+}
+
+.modal>div {
+  width: 100%;
+  height: 100%;  
+  max-width: 75vw;
+  max-height: 75vh;
+  text-align: center;
+  position: relative;
+  background: #131418;
+  z-index: 3
+}
+
+.wrap,
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.modal-content {
+ overflow-y:auto
+}
+
+
+/*demo fluff */
+
+p {
+  color: green;
+  font-size: 20px;
+  display: block;
+}
+
+button {
+  margin: 2em 0 0 0;
+  cursor: pointer;
+}
+
+.closebutton:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.clutter, .modal-content p {
+  margin: 2em auto;
+  padding: 40px;
+  max-width: 100%;
+  text-align: justify;
+}
+
+
+.clutter {width: 400px}
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+    align-content: center;
+    text-align:center;   
+    box-sizing: border-box; 
+
+        
+}
+.modalDialog:target {
+    opacity:1;
+    pointer-events: auto;
+}
+.modalDialog > div {
+    
+    width: 60%;   
+    height:70%;    
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+    box-sizing: border-box;
+    padding: 5px;
+    overflow: scroll
+    
+    
+}
+.imgModal{    
+    margin: 0 auto
+    object-fit: contain;;
+}
+.close {
+    background: #606061;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -2px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+}
+.close:hover {
+    background: #00d9ff;
+}
+ footer nav ul li a 
+ {
+     text-decoration: none;
+	color:white;
+	padding: 10px 20px;
+	border-radius: 5px;
+	
+	transition: 0.2s;
+ }
+ 
+ footer nav ul {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    
+}
+footer nav ul li {
+	margin: 0 5px;
+	list-style-type: none;
+}
