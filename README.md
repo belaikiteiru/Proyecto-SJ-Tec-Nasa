@@ -6,7 +6,7 @@
 
 ### Andrea Belén Calibar 
 ### Mariana Belén Pastrán
-### Gabriela 
+### Gabriela Tejada Mallea
 ### Dayana Naranjo
 
 ## Breve Descripción de la Pág
