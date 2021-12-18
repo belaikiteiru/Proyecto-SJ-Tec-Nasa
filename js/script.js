@@ -33,7 +33,7 @@ function obtenerInfo(name){
                    
        document.getElementById("title").textContent=data.collection.items[numeroAleatorio].data[0].title
        document.getElementById("pic").src =data.collection.items[numeroAleatorio].links[0].href;
-       document.getElementById("explanation").textContent = data.collection.items[numeroAleatorio].data[0].description
+       document.getElementById("explanation").textContent = shortText(data.collection.items[numeroAleatorio].data[0].description)
        
       }
     }
@@ -41,13 +41,15 @@ function obtenerInfo(name){
     xhrs.open("GET", url_planeta)
     xhrs.send();
 
-    //function showModal(id) {
-  
-            //$(this).fadeIn('slow');
-    //    }
-    //    function hideModal(id) {
-    //        document.getElementById(id).style.display = 'none';
-    //    }
+    const shortText = function (text) {
+        var newText = text.substring(0, 30);
+        newText = newText.charAt(0).toUpperCase() + newText.slice(1);
+      
+        if (text.length > 30) {
+          return newText + "...";
+        }
+        return newText;
+      };
 
 }
 
